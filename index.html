@@ -8,8 +8,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Schwimmspaß GmbH in Wasserland</title>
 		<link rel="stylesheet" href="styles.css" />
-		<!-- Tiny Slider CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
 		<!-- Font Awesome for social icons -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 	</head>
@@ -106,16 +104,21 @@
 				<div class="container">
 					<div class="slider-container">
 						<div class="slider" id="fitnessSlider">
-							<div class="slide">
-								<img src="images/slider1.png" alt="Aqua Fitness" />
-							</div>
-							<div class="slide">
-								<img src="images/slider2.png" alt="Aqua Fitness" />
+							<div class="slides-container">
+								<div class="slide">
+									<img src="images/slider1.png" alt="Aqua Fitness" />
+								</div>
+								<div class="slide">
+									<img src="images/slider2.png" alt="Aqua Fitness" />
+								</div>
 							</div>
 						</div>
 						<div class="slider-nav">
 							<button class="prev-btn" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
 							<button class="next-btn" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+						</div>
+						<div class="slider-dots">
+							<!-- Dots will be added by JavaScript -->
 						</div>
 					</div>
 					<div class="aqua-content">
@@ -176,8 +179,6 @@
 			</div>
 		</footer>
 
-		<!-- Tiny Slider JS -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>

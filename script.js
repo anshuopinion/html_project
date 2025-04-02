@@ -36,25 +36,124 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 
-	// Initialize Tiny Slider for Aqua Fitness
-	if (document.getElementById("fitnessSlider")) {
-		const slider = tns({
-			container: "#fitnessSlider",
-			items: 1,
-			slideBy: 1,
-			autoplay: false,
-			controls: true,
-			nav: true,
-			controlsContainer: ".slider-nav",
-			prevButton: ".prev-btn",
-			nextButton: ".next-btn",
-			autoplayButtonOutput: false,
-			responsive: {
-				768: {
-					items: 1,
-				},
+	// Custom slider functionality
+	const slider = document.getElementById("fitnessSlider");
+
+	if (slider) {
+		const slidesContainer = slider.querySelector(".slides-container");
+		const slides = slider.querySelectorAll(".slide");
+		const prevBtn = document.querySelector(".prev-btn");
+		const nextBtn = document.querySelector(".next-btn");
+		const dotsContainer = document.querySelector(".slider-dots");
+
+		let currentIndex = 0;
+		const totalSlides = slides.length;
+
+		// Create dots for navigation
+		for (let i = 0; i < totalSlides; i++) {
+			const dot = document.createElement("button");
+			dot.classList.add("dot");
+			dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+
+			if (i === 0) {
+				dot.classList.add("active");
+			}
+
+			dot.addEventListener("click", () => {
+				goToSlide(i);
+			});
+
+			dotsContainer.appendChild(dot);
+		}
+
+		// Functions to control the slider
+		function goToSlide(index) {
+			currentIndex = index;
+			updateSlider();
+		}
+
+		function updateSlider() {
+			// Update the transform to show the current slide
+			slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+			// Update dots
+			const dots = dotsContainer.querySelectorAll(".dot");
+			dots.forEach((dot, index) => {
+				if (index === currentIndex) {
+					dot.classList.add("active");
+				} else {
+					dot.classList.remove("active");
+				}
+			});
+		}
+
+		function nextSlide() {
+			currentIndex = (currentIndex + 1) % totalSlides;
+			updateSlider();
+		}
+
+		function prevSlide() {
+			currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+			updateSlider();
+		}
+
+		// Add event listeners
+		if (prevBtn) {
+			prevBtn.addEventListener("click", prevSlide);
+		}
+
+		if (nextBtn) {
+			nextBtn.addEventListener("click", nextSlide);
+		}
+
+		// Auto-play (optional)
+		let autoplayInterval;
+
+		function startAutoplay() {
+			autoplayInterval = setInterval(nextSlide, 5000);
+		}
+
+		function stopAutoplay() {
+			clearInterval(autoplayInterval);
+		}
+
+		// Start autoplay and handle pause on user interaction
+		startAutoplay();
+
+		slider.addEventListener("mouseenter", stopAutoplay);
+		slider.addEventListener("mouseleave", startAutoplay);
+
+		// Optional: Add touch support
+		let touchStartX = 0;
+		let touchEndX = 0;
+
+		slidesContainer.addEventListener(
+			"touchstart",
+			e => {
+				touchStartX = e.changedTouches[0].screenX;
+				stopAutoplay();
 			},
-		});
+			{passive: true}
+		);
+
+		slidesContainer.addEventListener(
+			"touchend",
+			e => {
+				touchEndX = e.changedTouches[0].screenX;
+				handleSwipe();
+				startAutoplay();
+			},
+			{passive: true}
+		);
+
+		function handleSwipe() {
+			const swipeThreshold = 50;
+			if (touchEndX < touchStartX - swipeThreshold) {
+				nextSlide();
+			} else if (touchEndX > touchStartX + swipeThreshold) {
+				prevSlide();
+			}
+		}
 	}
 
 	// Add active class to current page link
