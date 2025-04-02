@@ -487,14 +487,8 @@ footer {
 	position: relative;
 }
 
-.footer-bg {
-	position: absolute;
-	bottom: 0;
-	bottom: 0;
-	width: 100%;
-}
-
 /* Footer Top - Logo and Links */
+
 .footer-top {
 	display: flex;
 	flex-direction: column;
@@ -611,8 +605,31 @@ footer {
 	transition: color 0.3s ease;
 }
 
+.footer-bg-mobile {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.footer-bg {
+	display: none;
+}
+
 /* Media Queries for Responsive Design */
 @media (min-width: 768px) {
+	.footer-bg-mobile {
+		display: none;
+	}
+	.footer-bg {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		bottom: 0;
+		width: 100%;
+	}
+
 	.container {
 		padding: 0 32px;
 	}
