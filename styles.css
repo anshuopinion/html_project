@@ -731,8 +731,8 @@ footer {
 	}
 
 	.info-content {
-		max-width: 1100px;
-		margin: 0 auto;
+		/* max-width: 1100px; */
+		/* margin: 0 auto; */
 	}
 
 	.offerings-content {
@@ -799,4 +799,8 @@ footer {
 	.hero p {
 		width: 70%;
 	}
+}
+
+.even {
+	padding: 0px 16px;
 }
