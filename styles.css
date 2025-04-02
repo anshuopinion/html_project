@@ -239,17 +239,6 @@ header {
 	overflow: hidden;
 }
 
-.hero-bg-container {
-	position: relative;
-	max-width: 1440px;
-	margin: 0 auto;
-}
-.hero-image {
-	width: 100%;
-	height: auto;
-	margin-bottom: 48px;
-}
-
 .hero-bg {
 	position: absolute;
 	top: 0;
@@ -617,8 +606,40 @@ footer {
 	display: none;
 }
 
+.hero-bg-container {
+	position: relative;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+.hero-image {
+	width: 100%;
+	height: auto;
+	margin-bottom: 48px;
+}
+.hero-bg {
+	display: none;
+}
+.hero-bg-mobile {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
 /* Media Queries for Responsive Design */
 @media (min-width: 768px) {
+	.hero-bg-mobile {
+		display: none;
+	}
+	.hero-bg {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
 	.footer-bg-mobile {
 		display: none;
 	}
