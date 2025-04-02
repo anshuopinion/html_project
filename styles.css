@@ -802,4 +802,85 @@ footer {
 			}
 		}
 	}
+
+	/* display none on mobile 
+	 */
+
+	.mobile-footer {
+		display: none;
+	}
+	.mobile-footer {
+		width: 100%;
+		padding: 20px;
+		text-align: center;
+		padding-bottom: 60px;
+
+		& .address-section {
+			margin-top: 20px;
+			margin-bottom: 30px;
+
+			& h2 {
+				font-size: 16px;
+				font-weight: normal;
+				margin-bottom: 10px;
+			}
+
+			& p {
+				margin: 5px 0;
+				font-size: 16px;
+				line-height: 1.5;
+			}
+		}
+
+		& .contact-info {
+			margin: 30px auto;
+
+			& .contact-item {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				& img {
+					width: 20px;
+					margin-right: 10px;
+				}
+
+				& a {
+					color: var(--text-color);
+					text-decoration: none;
+					font-size: 16px;
+				}
+			}
+		}
+
+		& .links {
+			display: flex;
+			justify-content: center;
+			gap: 120px;
+			margin-top: 40px;
+
+			& a {
+				color: var(--text-color);
+				text-decoration: none;
+				font-size: 20px;
+				font-weight: 400;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		.container {
+			display: none;
+		}
+
+		.footer-bottom {
+			display: none;
+		}
+		.mobile-footer {
+			display: block;
+		}
+	}
 }
