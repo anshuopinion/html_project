@@ -375,7 +375,13 @@ header {
 	/* padding: 32px 0 64px; */
 	display: flex;
 	justify-content: center;
+	flex-direction: row;
 	align-items: center;
+}
+@media (max-width: 767px) {
+	.aqua-fitness .container {
+		flex-direction: column;
+	}
 }
 
 .slider-container {
@@ -432,24 +438,41 @@ header {
 	display: flex;
 	padding: 0 16px;
 	z-index: 5;
+	display: flex;
+	justify-content: space-between;
 }
 
 .slider-nav button {
-	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 100%;
+	fill: #fff;
+	box-shadow: 4px 10px 20px 0 rgba(57, 47, 90, 0.3);
+	width: 75px;
 	border: none;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
+	color: #aaa;
+	height: 75px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: background-color 0.3s ease;
+}
+
+@media (max-width: 767px) {
+	.slider-nav button {
+		width: 40px;
+		height: 40px;
+		border-radius: 100%;
+		fill: #fff;
+		box-shadow: 4px 10px 20px 0 rgba(57, 47, 90, 0.3);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 .slider-nav button:hover {
 	background-color: white;
 }
+
 .aqua-content {
 	display: flex;
 	flex-direction: column;
@@ -704,8 +727,7 @@ footer {
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
-		align-items: flex-end;
-		text-align: right;
+		margin-left: 60px;
 	}
 
 	/* Footer responsive styles for tablet */
