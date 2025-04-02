@@ -516,7 +516,6 @@ header {
 
 /* Footer Section */
 footer {
-	margin-top: 200px;
 	position: relative;
 	overflow: hidden;
 }
@@ -785,6 +784,7 @@ footer {
 }
 
 footer {
+	margin-top: 100px;
 	.container {
 		padding-bottom: 20px;
 		min-height: 25vw;
@@ -898,6 +898,8 @@ footer {
 	}
 
 	@media (max-width: 767px) {
+		margin-top: 60px;
+
 		.container {
 			display: none;
 		}
