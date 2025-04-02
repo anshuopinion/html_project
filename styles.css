@@ -306,6 +306,7 @@ header {
 	padding: 24px;
 	display: flex;
 	align-items: center;
+	position: relative;
 	/* justify-content: space-between; */
 	gap: 120px;
 	box-shadow: 4px 10px 30px 0 rgba(0, 0, 0, 0.06);
@@ -314,15 +315,35 @@ header {
 .info-content p {
 	max-width: 700px;
 }
+
 @media (max-width: 767px) {
 	.info-content {
 		width: 100%;
+
+		gap: 27px;
 	}
 }
 
 .info-content .icon {
 	flex-shrink: 0;
 	width: 40px;
+	display: none;
+}
+.info-content .icon1 {
+	flex-shrink: 0;
+	width: 40px;
+	display: block;
+}
+@media (max-width: 767px) {
+	.info-content .icon {
+		display: block;
+	}
+}
+
+@media (max-width: 767px) {
+	.info-content .icon1 {
+		display: none;
+	}
 }
 
 .info-content p {
@@ -389,6 +410,7 @@ header {
 	border-radius: 16px;
 	overflow: hidden;
 	margin-bottom: 24px;
+	width: 100%;
 }
 
 .slider {
@@ -417,9 +439,8 @@ header {
 }
 
 .dot {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
+	width: 129px;
+	height: 5px;
 	background-color: rgba(0, 70, 173, 0.3);
 	border: none;
 	cursor: pointer;
@@ -427,7 +448,7 @@ header {
 }
 
 .dot.active {
-	background-color: var(--primary-blue);
+	background-color: #4361ee;
 }
 
 .slider-nav {
@@ -497,6 +518,7 @@ header {
 footer {
 	margin-top: 200px;
 	position: relative;
+	overflow: hidden;
 }
 
 /* Footer Top - Logo and Links */
@@ -670,7 +692,7 @@ footer {
 		display: block;
 		position: absolute;
 		bottom: 0;
-		bottom: 0;
+		height: 400px;
 		width: 100%;
 	}
 
@@ -709,7 +731,7 @@ footer {
 	}
 
 	.info-content {
-		width: 80%;
+		max-width: 1100px;
 		margin: 0 auto;
 	}
 
