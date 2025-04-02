@@ -472,7 +472,6 @@ header {
 	font-size: 22px;
 	color: #004a98;
 	/* text direction */
-	
 }
 
 .aqua-content p {
@@ -484,10 +483,15 @@ header {
 
 /* Footer Section */
 footer {
+	margin-top: 200px;
 	position: relative;
-	background-image: url("images/footer.png");
-	background-size: cover;
-	background-position: center;
+}
+
+.footer-bg {
+	position: absolute;
+	bottom: 0;
+	bottom: 0;
+	width: 100%;
 }
 
 /* Footer Top - Logo and Links */
