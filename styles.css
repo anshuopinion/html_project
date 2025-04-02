@@ -272,12 +272,18 @@ header {
 .hero h1 {
 	color: #004a98;
 	font-size: 57px;
-	font-weight: semi-bold;
+	font-weight: 600;
 	line-height: 113%;
 }
+
 .hero-p {
 	display: flex;
 	flex-direction: row;
+}
+@media (max-width: 767px) {
+	.hero-p {
+		flex-direction: column;
+	}
 }
 
 .hero-p p {
@@ -295,6 +301,11 @@ header {
 	align-self: flex-start;
 }
 
+@media (max-width: 767px) {
+	.hero .btn {
+		align-self: center;
+	}
+}
 .info-content {
 	border-radius: 20px;
 	width: 1140px;
@@ -306,6 +317,11 @@ header {
 	gap: 37px;
 	box-shadow: 4px 10px 30px 0 rgba(0, 0, 0, 0.06);
 	background: #fff;
+}
+@media (max-width: 767px) {
+	.info-content {
+		width: 100%;
+	}
 }
 
 .info-content .icon {
@@ -319,6 +335,12 @@ header {
 	text-align: center;
 	font-size: 32px;
 }
+@media (max-width: 767px) {
+	.info-content p {
+		font-size: 20px;
+		color: #4361ee;
+	}
+}
 
 /* Offerings Section */
 .offerings {
@@ -330,6 +352,11 @@ header {
 	flex-direction: column;
 	gap: 24px;
 }
+@media (max-width: 767px) {
+	.offerings-content {
+		flex-direction: column-reverse;
+	}
+}
 
 .offerings-content p {
 	line-height: 150%;
@@ -337,9 +364,13 @@ header {
 	font-size: 20px;
 	font-weight: 400;
 }
-
 .offerings-content .btn {
 	align-self: flex-start;
+}
+@media (max-width: 767px) {
+	.offerings-content .btn {
+		align-self: center;
+	}
 }
 
 /* Aqua Fitness Section */
@@ -399,7 +430,6 @@ header {
 	transform: translateY(-50%);
 	width: 100%;
 	display: flex;
-	justify-content: space-between;
 	padding: 0 16px;
 	z-index: 5;
 }
@@ -562,17 +592,10 @@ footer {
 	transition: color 0.3s ease;
 }
 
-.legal-links a:hover {
-}
-
 /* Media Queries for Responsive Design */
 @media (min-width: 768px) {
 	.container {
 		padding: 0 32px;
-	}
-
-	.hero h1 {
-		font-size: 40px;
 	}
 
 	.mobile-menu {
@@ -656,6 +679,13 @@ footer {
 	}
 }
 
+@media (max-width: 767px) {
+	.hero h1 {
+		font-size: 30px;
+		line-height: 157%;
+	}
+}
+
 @media (min-width: 1024px) {
 	.container {
 		padding: 0 48px;
@@ -663,10 +693,6 @@ footer {
 
 	.hero {
 		padding: 64px 0;
-	}
-
-	.hero h1 {
-		font-size: 57px;
 	}
 
 	.hero p {
